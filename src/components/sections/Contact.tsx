@@ -38,35 +38,38 @@ const Contact = () => {
             </p>
 
             <form 
-              onSubmit={handleSubmit(onSubmit)} 
-              className="space-y-5"
-              name="contact"
+              action="https://api.web3forms.com/submit" 
               method="POST"
-              data-netlify="true"
+              className="space-y-5"
             >
-              {/* Required for Netlify Forms in Next.js */}
-              <input type="hidden" name="form-name" value="contact" />
+              {/* Web3Forms Access Key - Sends to client email */}
+              <input type="hidden" name="access_key" value="7984852c-74a0-4786-8968-3d237199c065" />
+              <input type="hidden" name="subject" value="New Lead: CAMEO Website" />
+              <input type="hidden" name="from_name" value="CAMEO Consultancy" />
+              
+              {/* Redirect to a success page or just stay on site */}
+              <input type="hidden" name="redirect" value="https://cameo-consultancy.netlify.app/" />
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-navy uppercase tracking-wider">Full Name</label>
                   <input
-                    {...register("name", { required: true })}
+                    type="text"
                     name="name"
+                    required
                     className="w-full px-5 py-4 rounded-2xl bg-white border border-gray-200 focus:border-primary focus:outline-none transition-all text-navy placeholder-gray-400"
                     placeholder="John Smith"
                   />
-                  {errors.name && <span className="text-red-500 text-xs">Name is required</span>}
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-navy uppercase tracking-wider">Email Address</label>
                   <input
-                    {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+                    type="email"
                     name="email"
+                    required
                     className="w-full px-5 py-4 rounded-2xl bg-white border border-gray-200 focus:border-primary focus:outline-none transition-all text-navy placeholder-gray-400"
                     placeholder="john@company.com"
                   />
-                  {errors.email && <span className="text-red-500 text-xs">Valid email required</span>}
                 </div>
               </div>
 
@@ -74,7 +77,7 @@ const Contact = () => {
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-navy uppercase tracking-wider">Phone Number</label>
                   <input
-                    {...register("phone")}
+                    type="tel"
                     name="phone"
                     className="w-full px-5 py-4 rounded-2xl bg-white border border-gray-200 focus:border-primary focus:outline-none transition-all text-navy placeholder-gray-400"
                     placeholder="+971 00 000 0000"
@@ -83,7 +86,6 @@ const Contact = () => {
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-navy uppercase tracking-wider">Service Interest</label>
                   <select
-                    {...register("service")}
                     name="service"
                     className="w-full px-5 py-4 rounded-2xl bg-white border border-gray-200 focus:border-primary focus:outline-none transition-all text-navy appearance-none"
                   >
@@ -99,13 +101,12 @@ const Contact = () => {
               <div className="space-y-2">
                 <label className="text-xs font-bold text-navy uppercase tracking-wider">Your Message</label>
                 <textarea
-                  {...register("message", { required: true })}
                   name="message"
+                  required
                   rows={5}
                   className="w-full px-5 py-4 rounded-2xl bg-white border border-gray-200 focus:border-primary focus:outline-none transition-all text-navy placeholder-gray-400 resize-none"
                   placeholder="Tell us about your business and what you need help with..."
                 />
-                {errors.message && <span className="text-red-500 text-xs">Message is required</span>}
               </div>
 
               <Button type="submit" variant="orange" size="lg" className="w-full sm:w-auto">
