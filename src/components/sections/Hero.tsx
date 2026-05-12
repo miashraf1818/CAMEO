@@ -12,13 +12,13 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         {/* Background image overlay */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-          style={{ backgroundImage: "url('https://images.pexels.com/photos/1486222/pexels-photo-1486222.jpeg?auto=compress&cs=tinysrgb&w=1600')" }}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60 mix-blend-luminosity"
+          style={{ backgroundImage: "url('https://images.pexels.com/photos/3787839/pexels-photo-3787839.jpeg?auto=compress&cs=tinysrgb&w=1600')" }}
         />
         {/* Gradient blobs */}
         <div className="absolute top-1/4 -left-20 w-[500px] h-[500px] bg-primary/25 rounded-full blur-[140px]" />
         <div className="absolute bottom-1/4 -right-20 w-[500px] h-[500px] bg-premium/20 rounded-full blur-[140px]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/80 via-navy/60 to-navy" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/80 to-navy/10" />
         {/* Subtle noise texture */}
         <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E\")" }} />
       </div>
