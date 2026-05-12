@@ -37,12 +37,22 @@ const Contact = () => {
               Let us help you create a clear roadmap for growth, efficiency, and long-term success.
             </p>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+            <form 
+              onSubmit={handleSubmit(onSubmit)} 
+              className="space-y-5"
+              name="contact"
+              method="POST"
+              data-netlify="true"
+            >
+              {/* Required for Netlify Forms in Next.js */}
+              <input type="hidden" name="form-name" value="contact" />
+
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-navy uppercase tracking-wider">Full Name</label>
                   <input
                     {...register("name", { required: true })}
+                    name="name"
                     className="w-full px-5 py-4 rounded-2xl bg-white border border-gray-200 focus:border-primary focus:outline-none transition-all text-navy placeholder-gray-400"
                     placeholder="John Smith"
                   />
@@ -52,6 +62,7 @@ const Contact = () => {
                   <label className="text-xs font-bold text-navy uppercase tracking-wider">Email Address</label>
                   <input
                     {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+                    name="email"
                     className="w-full px-5 py-4 rounded-2xl bg-white border border-gray-200 focus:border-primary focus:outline-none transition-all text-navy placeholder-gray-400"
                     placeholder="john@company.com"
                   />
@@ -64,6 +75,7 @@ const Contact = () => {
                   <label className="text-xs font-bold text-navy uppercase tracking-wider">Phone Number</label>
                   <input
                     {...register("phone")}
+                    name="phone"
                     className="w-full px-5 py-4 rounded-2xl bg-white border border-gray-200 focus:border-primary focus:outline-none transition-all text-navy placeholder-gray-400"
                     placeholder="+971 00 000 0000"
                   />
@@ -72,6 +84,7 @@ const Contact = () => {
                   <label className="text-xs font-bold text-navy uppercase tracking-wider">Service Interest</label>
                   <select
                     {...register("service")}
+                    name="service"
                     className="w-full px-5 py-4 rounded-2xl bg-white border border-gray-200 focus:border-primary focus:outline-none transition-all text-navy appearance-none"
                   >
                     <option value="strategy">Business Strategy</option>
@@ -87,6 +100,7 @@ const Contact = () => {
                 <label className="text-xs font-bold text-navy uppercase tracking-wider">Your Message</label>
                 <textarea
                   {...register("message", { required: true })}
+                  name="message"
                   rows={5}
                   className="w-full px-5 py-4 rounded-2xl bg-white border border-gray-200 focus:border-primary focus:outline-none transition-all text-navy placeholder-gray-400 resize-none"
                   placeholder="Tell us about your business and what you need help with..."
