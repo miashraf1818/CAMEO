@@ -8,7 +8,6 @@ const trustItems = [
   "Based in Business Bay",
   "Management Consultancy Services",
   "UAE & International Advisory",
-  "DWTC Authorized Partner",
 ];
 
 const TrustStrip = () => {

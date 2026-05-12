@@ -14,7 +14,7 @@ import {
 const services = [
   {
     title: "Business Strategy",
-    description: "Growth planning, market entry, business model review, and expansion strategy tailored to your goals.",
+    description: "Growth planning, market entry, business model review, and expansion strategy. CAMEO assists companies in improving their sales performance through clearly defined business strategies, operational enhancement, and the implementation of proven and successful business models tailored to their industry and growth objectives.",
     icon: <Target size={32} />,
     img: "https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=600",
   },

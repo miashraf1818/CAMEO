@@ -44,7 +44,7 @@ const industries = [
     img: "https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400",
   },
   {
-    name: "UAE Market Entrants",
+    name: "Entrepreneurs entering the UAE market",
     icon: <UserCheck size={28} />,
     description: "Setup & compliance",
     img: "https://images.pexels.com/photos/1707820/pexels-photo-1707820.jpeg?auto=compress&cs=tinysrgb&w=400",

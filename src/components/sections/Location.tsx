@@ -28,7 +28,7 @@ const Location = () => {
 
             <p className="text-lg text-text-main/70 leading-relaxed mb-8">
               Our office in Business Bay places us at the center of Dubai&apos;s commercial ecosystem,
-              allowing us to support clients across the UAE and international markets with speed and precision.
+              allowing us to support clients across the UAE and international markets.
             </p>
 
             <div className="space-y-4">

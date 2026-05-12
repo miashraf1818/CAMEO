@@ -33,7 +33,6 @@ const FinalCTA = () => {
           </h2>
           <p className="text-xl text-white/60 leading-relaxed mb-12 max-w-2xl mx-auto">
             Let us help you create a clear roadmap for growth, efficiency, and long-term success.
-            Your first consultation is a conversation — no commitment required.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

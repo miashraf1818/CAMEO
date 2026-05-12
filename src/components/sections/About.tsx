@@ -27,9 +27,15 @@ const About = () => {
             />
             <p className="text-lg text-text-main/70 leading-relaxed mb-8">
               CAMEO Management Consultancies provides tailored advisory solutions for startups, 
-              SMEs, investors, and established businesses. We combine local UAE market knowledge 
+              SMEs, investors, and established businesses. We combine deep local UAE market knowledge 
               with international business insight to help clients structure, optimize, and grow 
               with confidence.
+            </p>
+            <p className="text-lg text-text-main/70 leading-relaxed mb-8">
+              Our approach goes beyond traditional consultancy. CAMEO assists companies in improving their sales performance through clearly defined business strategies, operational enhancement, and the implementation of proven and successful business models tailored to their industry and growth objectives.
+            </p>
+            <p className="text-lg text-text-main/70 leading-relaxed mb-8">
+              By combining strategic planning with practical execution support, we help businesses strengthen operations, increase efficiency, and achieve sustainable long-term growth.
             </p>
 
             {/* Letter of Authorization Highlight */}
