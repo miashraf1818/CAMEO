@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0B9CD9;
+  --color-accent: #F5931F;
+  --color-premium: #901F74;
+  --color-neutral: #F8FAFC;
+  --color-navy: #071120;
+  --color-text-main: #1E293B;
+
+  --font-heading: var(--font-plus-jakarta), ui-sans-serif, system-ui;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui;
+
+  --radius-xl: 24px;
+  
+  --animate-fade-up: fade-up 0.5s ease-out forwards;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+}
+
+:root {
+  --background: #F8FAFC;
+  --foreground: #1E293B;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-plus-jakarta);
+}
+
+@layer utilities {
+  .container-custom {
+    @apply max-w-[1280px] mx-auto px-6;
+  }
+
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  
+  .glass-dark {
+    @apply bg-navy/40 backdrop-blur-lg border border-white/10;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-premium;
+  }
+
+  .btn-orange {
+    @apply bg-gradient-to-r from-accent to-[#D97706] text-white shadow-[0_4px_14px_0_rgba(245,147,31,0.39)] hover:shadow-[0_6px_20px_rgba(245,147,31,0.5)] transition-all duration-300;
+  }
+}
+
