@@ -33,8 +33,8 @@ const Location = () => {
 
             <div className="space-y-4">
               {[
-                { label: "Address", value: "Office 702, Business Bay, Dubai, UAE" },
-                { label: "Zone", value: "Dubai World Trade Centre Free Zone Area" },
+                { label: "Address", value: "Office 702, Metropolis Tower, Floor 7, Business Bay, Dubai, UAE" },
+
                 { label: "Availability", value: "Mon–Fri, 9:00 AM – 6:00 PM GST" },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4 p-4 rounded-2xl bg-neutral border border-gray-100">

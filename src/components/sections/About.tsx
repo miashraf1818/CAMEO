@@ -38,22 +38,7 @@ const About = () => {
               By combining strategic planning with practical execution support, we help businesses strengthen operations, increase efficiency, and achieve sustainable long-term growth.
             </p>
 
-            {/* Letter of Authorization Highlight */}
-            <div className="bg-white rounded-3xl border border-primary/10 p-8 mb-8 shadow-sm relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-primary to-accent rounded-l-3xl" />
-              <div className="pl-2">
-                <div className="text-xs font-bold uppercase tracking-widest text-primary mb-3">
-                  Officially Authorized
-                </div>
-                <p className="text-navy font-semibold text-base leading-relaxed">
-                  FinXpert Solutions is an appointed authorized service provider for DWTC Free Zone — 
-                  licensed to handle trade renewals, visas, compliance, and all corporate services.
-                </p>
-                <div className="mt-4 text-xs text-text-main/50">
-                  Authorized for DMXM FZE · Trade License No. L-3779 · Approved by Maria Ozhegova
-                </div>
-              </div>
-            </div>
+
 
             <div className="space-y-5">
               <div className="flex gap-4">

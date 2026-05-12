@@ -27,7 +27,7 @@ const Footer = () => {
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-3 text-white/55">
                 <MapPin size={14} className="text-primary mt-0.5 shrink-0" />
-                <span>Office 702, Business Bay, Dubai, UAE</span>
+                <span>Office 702, Metropolis Tower, Floor 7, Business Bay, Dubai, UAE</span>
               </div>
               <div className="flex items-center gap-3 text-white/55">
                 <Mail size={14} className="text-primary shrink-0" />
@@ -76,13 +76,7 @@ const Footer = () => {
               <li><Link href="#" className="hover:text-primary transition-colors">Terms of Service</Link></li>
               <li><Link href="#" className="hover:text-primary transition-colors">Disclaimer</Link></li>
             </ul>
-            <div className="mt-6 p-4 rounded-2xl bg-white/5 border border-white/10">
-              <div className="text-xs font-bold text-primary uppercase tracking-wider mb-2">Licensed In</div>
-              <div className="text-white/70 text-xs leading-relaxed">
-                Dubai World Trade Centre Free Zone<br />
-                Business Bay, Dubai, UAE
-              </div>
-            </div>
+
           </div>
         </div>
 

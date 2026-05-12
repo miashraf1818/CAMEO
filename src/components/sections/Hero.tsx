@@ -113,22 +113,7 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Secondary Card — Compliance */}
-          <motion.div
-            animate={{ y: [0, 18, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-            className="absolute bottom-16 left-0 w-64 glass-dark p-6 rounded-2xl border border-white/10 z-10 shadow-2xl"
-          >
-            <div className="flex items-center gap-3 mb-2">
-              <div className="w-10 h-10 rounded-full bg-green-400/20 flex items-center justify-center text-green-400">
-                <ShieldCheck size={20} />
-              </div>
-              <div>
-                <div className="text-white font-bold text-sm">Fully Compliant</div>
-                <div className="text-white/50 text-xs">DWTC Free Zone Authorized</div>
-              </div>
-            </div>
-          </motion.div>
+
 
           {/* Tertiary Card — Clients */}
           <motion.div

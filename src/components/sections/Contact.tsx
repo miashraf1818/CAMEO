@@ -119,7 +119,7 @@ const Contact = () => {
               <div className="absolute bottom-5 left-5">
                 <div className="text-white font-bold text-lg">Business Bay, Dubai</div>
                 <div className="text-white/70 text-sm flex items-center gap-1">
-                  <MapPin size={12} /> Office 702, UAE
+                  <MapPin size={12} /> Office 702, Metropolis Tower, UAE
                 </div>
               </div>
               {/* Google Maps link overlay */}
@@ -145,7 +145,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="text-primary font-bold text-sm uppercase tracking-wider mb-1">Address</div>
-                    <p className="text-white/70 text-sm">Office 702, Business Bay, Dubai, UAE</p>
+                    <p className="text-white/70 text-sm">Office 702, Metropolis Tower, Floor 7, Business Bay, Dubai, UAE</p>
                   </div>
                 </div>
 

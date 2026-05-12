@@ -7,7 +7,7 @@ import Services from "@/components/sections/Services";
 import Industries from "@/components/sections/Industries";
 import Process from "@/components/sections/Process";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
-import Testimonials from "@/components/sections/Testimonials";
+
 import Location from "@/components/sections/Location";
 import FinalCTA from "@/components/sections/FinalCTA";
 import Contact from "@/components/sections/Contact";
@@ -24,7 +24,7 @@ export default function Home() {
         <Industries />
         <Process />
         <WhyChooseUs />
-        <Testimonials />
+
         <Location />
         <FinalCTA />
         <Contact />
