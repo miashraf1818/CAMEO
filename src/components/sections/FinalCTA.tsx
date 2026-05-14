@@ -51,7 +51,7 @@ const FinalCTA = () => {
               >
                 Call +971 58 559 4087
               </Button>
-            </Link>
+            </a>
           </div>
 
           {/* Trust row */}
