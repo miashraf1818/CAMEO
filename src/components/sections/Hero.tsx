@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import Button from "@/components/ui/Button";
 import { ArrowRight, BarChart3, ShieldCheck, TrendingUp, CheckCircle } from "lucide-react";
 
@@ -53,13 +54,17 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            <Button variant="orange" size="lg" className="group">
-              Book a Consultation
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-            </Button>
-            <Button variant="outline" size="lg" className="text-white border-white/25 hover:bg-white/10 hover:border-white/40">
-              View Our Services
-            </Button>
+            <Link href="#contact">
+              <Button variant="orange" size="lg" className="group">
+                Book a Consultation
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+              </Button>
+            </Link>
+            <Link href="#services">
+              <Button variant="outline" size="lg" className="text-white border-white/25 hover:bg-white/10 hover:border-white/40">
+                View Our Services
+              </Button>
+            </Link>
           </div>
 
           {/* Mini trust indicators */}

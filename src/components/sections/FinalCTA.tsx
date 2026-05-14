@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import Button from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
 
@@ -36,18 +37,21 @@ const FinalCTA = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="orange" size="lg" className="group">
-              Schedule a Consultation
-              <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="text-white border-white/25 hover:bg-white/10 hover:border-white/40"
-              onClick={() => window.open("tel:+971585594087")}
-            >
-              Call +971 58 559 4087
-            </Button>
+            <Link href="#contact">
+              <Button variant="orange" size="lg" className="group">
+                Schedule a Consultation
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
+              </Button>
+            </Link>
+            <Link href="tel:+971585594087">
+              <Button
+                variant="outline"
+                size="lg"
+                className="text-white border-white/25 hover:bg-white/10 hover:border-white/40"
+              >
+                Call +971 58 559 4087
+              </Button>
+            </Link>
           </div>
 
           {/* Trust row */}
