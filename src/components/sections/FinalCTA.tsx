@@ -37,13 +37,13 @@ const FinalCTA = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="#contact">
+            <a href="#contact">
               <Button variant="orange" size="lg" className="group">
                 Schedule a Consultation
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
               </Button>
-            </Link>
-            <Link href="tel:+971585594087">
+            </a>
+            <a href="tel:+971585594087">
               <Button
                 variant="outline"
                 size="lg"

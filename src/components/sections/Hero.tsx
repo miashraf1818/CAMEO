@@ -54,17 +54,17 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            <Link href="#contact">
+            <a href="#contact">
               <Button variant="orange" size="lg" className="group">
                 Book a Consultation
                 <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
               </Button>
-            </Link>
-            <Link href="#services">
+            </a>
+            <a href="#services">
               <Button variant="outline" size="lg" className="text-white border-white/25 hover:bg-white/10 hover:border-white/40">
                 View Our Services
               </Button>
-            </Link>
+            </a>
           </div>
 
           {/* Mini trust indicators */}

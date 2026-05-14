@@ -66,11 +66,11 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <Link href="#contact">
+          <a href="#contact">
             <Button variant="orange" size="sm" className="ml-4">
               Book a Consultation
             </Button>
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -106,11 +106,11 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <Link href="#contact" className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
+              <a href="#contact" className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button variant="orange" size="md" className="w-full mt-2">
                   Book a Consultation
                 </Button>
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}
