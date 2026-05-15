@@ -82,7 +82,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-white/35 text-xs">
-          <p>© 2026 CAMEO Management Consultancies L.L.C S.O.C | Powered by FinXpert Solutions</p>
+          <p>© 2026 CAMEO Management Consultancies L.L.C S.O.C | Designed & Developed by Ennkay Solutions</p>
           <p>All rights reserved. Licensed consultancy firm in Dubai, UAE.</p>
         </div>
       </div>
