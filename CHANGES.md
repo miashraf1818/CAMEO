@@ -8,7 +8,7 @@ This document tracks all modifications, updates, pushes, and deployments for the
 
 | Date | Commit / Reference | Task / Description | Status / Deployment |
 | :--- | :--- | :--- | :--- |
-| **2026-07-02** | `a4594c9` | Implemented Next.js Serverless API Route (`/api/contact`) integrating Resend for sending email queries to contact@cameo.services and auto-reply confirmations to visitors | Pushed to GitHub |
+| **2026-07-02** | `83aff62` | Implemented Next.js Serverless API Route (`/api/contact`) with Resend auto-reply & admin alerts mapped to verified domain `cameoconsultancy.services`, and updated all public contact emails | Pushed to GitHub |
 | **2026-07-02** | `955a6a8` | Added 'Accounting & Bookkeeping' service, implemented interactive service details modal (popup), updated footer/contact forms, resolved all ESLint compilation warnings/errors, and disabled Turbopack to fix dev manifest ENOENT crashes | Pushed to GitHub |
 | **2026-05-15** | `c89b3ab` | Fixed JSX parsing error (closing tag mismatch) | Pushed to GitHub & Deployed |
 | **2026-05-15** | `284f4bf` | Converted section links to standard anchor tags for reliable scrolling | Pushed to GitHub & Deployed |
