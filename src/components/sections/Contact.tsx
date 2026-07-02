@@ -1,11 +1,57 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
 import { MapPin, Mail, Phone, MessageCircle } from "lucide-react";
+
 const Contact = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setStatus("idle");
+    setErrorMessage("");
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      service: formData.get("service"),
+      message: formData.get("message"),
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to submit request.");
+      }
+
+      setStatus("success");
+      e.currentTarget.reset();
+    } catch (err) {
+      setStatus("error");
+      const msg = err instanceof Error ? err.message : "Failed to submit enquiry. Please try again.";
+      setErrorMessage(msg);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-32 bg-neutral overflow-hidden relative">
       <div className="container-custom">
@@ -28,17 +74,28 @@ const Contact = () => {
             </p>
 
             <form 
-              action="https://api.web3forms.com/submit" 
-              method="POST"
+              onSubmit={handleSubmit}
               className="space-y-5"
             >
-              {/* Web3Forms Access Key - Sends to client email */}
-              <input type="hidden" name="access_key" value="7984852c-74a0-4786-8968-3d237199c065" />
-              <input type="hidden" name="subject" value="New Lead: CAMEO Website" />
-              <input type="hidden" name="from_name" value="CAMEO Consultancy" />
-              
-              {/* Redirect to a success page or just stay on site */}
-              <input type="hidden" name="redirect" value="https://cameo-consultancy.netlify.app/" />
+              {status === "success" && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="p-5 rounded-2xl bg-green-50 border border-green-200 text-green-800 text-sm leading-relaxed"
+                >
+                  <strong>Success!</strong> Your consultation query has been submitted. A confirmation email has been sent to you.
+                </motion.div>
+              )}
+
+              {status === "error" && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="p-5 rounded-2xl bg-red-50 border border-red-200 text-red-800 text-sm leading-relaxed"
+                >
+                  <strong>Submission Error:</strong> {errorMessage}
+                </motion.div>
+              )}
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="space-y-2">
@@ -47,7 +104,8 @@ const Contact = () => {
                     type="text"
                     name="name"
                     required
-                    className="w-full px-5 py-4 rounded-2xl bg-white border border-gray-200 focus:border-primary focus:outline-none transition-all text-navy placeholder-gray-400"
+                    disabled={isSubmitting}
+                    className="w-full px-5 py-4 rounded-2xl bg-white border border-gray-200 focus:border-primary focus:outline-none transition-all text-navy placeholder-gray-400 disabled:opacity-50"
                     placeholder="John Smith"
                   />
                 </div>
@@ -57,7 +115,8 @@ const Contact = () => {
                     type="email"
                     name="email"
                     required
-                    className="w-full px-5 py-4 rounded-2xl bg-white border border-gray-200 focus:border-primary focus:outline-none transition-all text-navy placeholder-gray-400"
+                    disabled={isSubmitting}
+                    className="w-full px-5 py-4 rounded-2xl bg-white border border-gray-200 focus:border-primary focus:outline-none transition-all text-navy placeholder-gray-400 disabled:opacity-50"
                     placeholder="john@company.com"
                   />
                 </div>
@@ -69,7 +128,8 @@ const Contact = () => {
                   <input
                     type="tel"
                     name="phone"
-                    className="w-full px-5 py-4 rounded-2xl bg-white border border-gray-200 focus:border-primary focus:outline-none transition-all text-navy placeholder-gray-400"
+                    disabled={isSubmitting}
+                    className="w-full px-5 py-4 rounded-2xl bg-white border border-gray-200 focus:border-primary focus:outline-none transition-all text-navy placeholder-gray-400 disabled:opacity-50"
                     placeholder="+971 00 000 0000"
                   />
                 </div>
@@ -77,7 +137,8 @@ const Contact = () => {
                   <label className="text-xs font-bold text-navy uppercase tracking-wider">Service Interest</label>
                   <select
                     name="service"
-                    className="w-full px-5 py-4 rounded-2xl bg-white border border-gray-200 focus:border-primary focus:outline-none transition-all text-navy appearance-none"
+                    disabled={isSubmitting}
+                    className="w-full px-5 py-4 rounded-2xl bg-white border border-gray-200 focus:border-primary focus:outline-none transition-all text-navy appearance-none disabled:opacity-50"
                   >
                     <option value="strategy">Business Strategy</option>
                     <option value="operations">Operational Improvement</option>
@@ -95,13 +156,14 @@ const Contact = () => {
                   name="message"
                   required
                   rows={5}
-                  className="w-full px-5 py-4 rounded-2xl bg-white border border-gray-200 focus:border-primary focus:outline-none transition-all text-navy placeholder-gray-400 resize-none"
+                  disabled={isSubmitting}
+                  className="w-full px-5 py-4 rounded-2xl bg-white border border-gray-200 focus:border-primary focus:outline-none transition-all text-navy placeholder-gray-400 resize-none disabled:opacity-50"
                   placeholder="Tell us about your business and what you need help with..."
                 />
               </div>
 
-              <Button type="submit" variant="orange" size="lg" className="w-full sm:w-auto">
-                Schedule a Consultation
+              <Button type="submit" variant="orange" size="lg" className="w-full sm:w-auto" disabled={isSubmitting}>
+                {isSubmitting ? "Submitting..." : "Schedule a Consultation"}
               </Button>
             </form>
           </motion.div>
