@@ -4,6 +4,27 @@ This document tracks all modifications, updates, pushes, and deployments for the
 
 ---
 
+## 🛠️ Technology Stack & Libraries
+
+The website is built with a modern, high-performance web development stack:
+
+*   **Languages**:
+    *   **TypeScript (TSX / TS)**: Strongly-typed scripting to ensure error-free compilation and type safety.
+    *   **HTML5 / CSS3**: Foundational semantics and layouts.
+*   **Core UI Frameworks**:
+    *   **React 19**: Modern component-based view rendering.
+    *   **Next.js 15 (App Router)**: Framework for high-performance static rendering and serverless route handlers.
+*   **Styling**:
+    *   **Tailwind CSS (v4)**: Modern utility-first CSS framework for responsive layouts and premium designs.
+*   **Animations**:
+    *   **Framer Motion (v12)**: Used for scroll fade-ins, card lift micro-animations, and modal overlay popups.
+*   **Icons**:
+    *   **Lucide React**: Vector icons used throughout the interface.
+*   **Email Deliverability**:
+    *   **Resend API**: Powering the serverless API endpoint to forward visitor queries to `contact@cameoconsultancy.services` and send auto-replies to users.
+
+---
+
 ## 📅 Timeline & Activity Log
 
 | Date | Commit / Reference | Task / Description | Status / Deployment |
