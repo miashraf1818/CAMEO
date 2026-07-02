@@ -13,11 +13,12 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
     setIsSubmitting(true);
     setStatus("idle");
     setErrorMessage("");
 
-    const formData = new FormData(e.currentTarget);
+    const formData = new FormData(form);
     const data = {
       name: formData.get("name"),
       email: formData.get("email"),
@@ -42,7 +43,7 @@ const Contact = () => {
       }
 
       setStatus("success");
-      e.currentTarget.reset();
+      form.reset();
     } catch (err) {
       setStatus("error");
       const msg = err instanceof Error ? err.message : "Failed to submit enquiry. Please try again.";
