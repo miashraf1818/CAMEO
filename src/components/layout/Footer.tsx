@@ -64,6 +64,7 @@ const Footer = () => {
               <li><Link href="#services" className="hover:text-primary transition-colors">Operational Improvement</Link></li>
               <li><Link href="#services" className="hover:text-primary transition-colors">Corporate Structuring</Link></li>
               <li><Link href="#services" className="hover:text-primary transition-colors">Financial Advisory</Link></li>
+              <li><Link href="#services" className="hover:text-primary transition-colors">Accounting & Bookkeeping</Link></li>
               <li><Link href="#services" className="hover:text-primary transition-colors">Compliance & Risk</Link></li>
             </ul>
           </div>

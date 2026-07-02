@@ -2,9 +2,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import Button from "@/components/ui/Button";
-import { ArrowRight, BarChart3, ShieldCheck, TrendingUp, CheckCircle } from "lucide-react";
+import { ArrowRight, BarChart3, TrendingUp, CheckCircle } from "lucide-react";
 
 const Hero = () => {
   return (

@@ -5,17 +5,7 @@ import { motion } from "framer-motion";
 import SectionHeading from "@/components/ui/SectionHeading";
 import Button from "@/components/ui/Button";
 import { MapPin, Mail, Phone, MessageCircle } from "lucide-react";
-import { useForm } from "react-hook-form";
-
 const Contact = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const onSubmit = (data: any) => {
-    console.log(data);
-    alert("Thank you! We will contact you shortly at your provided details.");
-  };
-
   return (
     <section id="contact" className="py-32 bg-neutral overflow-hidden relative">
       <div className="container-custom">
@@ -93,6 +83,7 @@ const Contact = () => {
                     <option value="operations">Operational Improvement</option>
                     <option value="structuring">Corporate Structuring</option>
                     <option value="financial">Financial Advisory</option>
+                    <option value="accounting">Accounting & Bookkeeping</option>
                     <option value="compliance">Compliance & Risk</option>
                   </select>
                 </div>
