@@ -223,8 +223,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <div className="text-primary font-bold text-sm uppercase tracking-wider mb-1">Email</div>
-                    <a href="mailto:1610jdelaney@gmail.com" className="text-white/70 text-sm hover:text-white transition-colors">
-                      1610jdelaney@gmail.com
+                    <a href="mailto:contact@cameoconsultancy.services" className="text-white/70 text-sm hover:text-white transition-colors">
+                      contact@cameoconsultancy.services
                     </a>
                   </div>
                 </div>

@@ -36,7 +36,7 @@ export async function POST(request: Request) {
     };
     const selectedServiceName = serviceNames[service] || service || "General Consultation";
 
-    // 1. Send Notification Email to CAMEO admin (contact@cameo.services)
+    // 1. Send Notification Email to CAMEO admin (contact@cameoconsultancy.services)
     const adminEmailHtml = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eee; border-radius: 10px; color: #1e293b;">
         <h2 style="color: #ff6b00; margin-bottom: 20px;">New Consultation Query</h2>
@@ -78,8 +78,8 @@ export async function POST(request: Request) {
         Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        from: "CAMEO Website <contact@cameo.services>",
-        to: ["contact@cameo.services"],
+        from: "CAMEO Website <contact@cameoconsultancy.services>",
+        to: ["contact@cameoconsultancy.services"],
         subject: `New Lead: ${selectedServiceName} - ${name}`,
         html: adminEmailHtml,
       }),
@@ -128,7 +128,7 @@ export async function POST(request: Request) {
         <div style="text-align: center; font-size: 12px; color: #94a3b8; line-height: 1.5;">
           <p style="margin: 0 0 4px 0; font-weight: bold; color: #64748b;">CAMEO Management Consultancies L.L.C</p>
           <p style="margin: 0 0 4px 0;">Office 702, Metropolis Tower, Floor 7, Business Bay, Dubai, UAE</p>
-          <p style="margin: 0;"><a href="mailto:contact@cameo.services" style="color: #ff6b00; text-decoration: none;">contact@cameo.services</a> | +971 58 559 4087</p>
+          <p style="margin: 0;"><a href="mailto:contact@cameoconsultancy.services" style="color: #ff6b00; text-decoration: none;">contact@cameoconsultancy.services</a> | +971 58 559 4087</p>
         </div>
       </div>
     `;
@@ -142,7 +142,7 @@ export async function POST(request: Request) {
           Authorization: `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
-          from: "CAMEO Consultancy <contact@cameo.services>",
+          from: "CAMEO Consultancy <contact@cameoconsultancy.services>",
           to: [email],
           subject: "Consultation Request Received - CAMEO",
           html: visitorEmailHtml,
