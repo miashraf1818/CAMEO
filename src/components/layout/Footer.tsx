@@ -48,11 +48,11 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-6">Quick Links</h4>
             <ul className="space-y-3 text-white/55 text-sm">
-              <li><Link href="#" className="hover:text-primary transition-colors">Home</Link></li>
-              <li><Link href="#services" className="hover:text-primary transition-colors">Services</Link></li>
-              <li><Link href="#industries" className="hover:text-primary transition-colors">Industries</Link></li>
-              <li><Link href="#about" className="hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link href="#contact" className="hover:text-primary transition-colors">Contact</Link></li>
+              <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li>
+              <li><Link href="/#services" className="hover:text-primary transition-colors">Services</Link></li>
+              <li><Link href="/#industries" className="hover:text-primary transition-colors">Industries</Link></li>
+              <li><Link href="/#about" className="hover:text-primary transition-colors">About Us</Link></li>
+              <li><Link href="/#contact" className="hover:text-primary transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -60,12 +60,12 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-6">Our Services</h4>
             <ul className="space-y-3 text-white/55 text-sm">
-              <li><Link href="#services" className="hover:text-primary transition-colors">Business Strategy</Link></li>
-              <li><Link href="#services" className="hover:text-primary transition-colors">Operational Improvement</Link></li>
-              <li><Link href="#services" className="hover:text-primary transition-colors">Corporate Structuring</Link></li>
-              <li><Link href="#services" className="hover:text-primary transition-colors">Financial Advisory</Link></li>
-              <li><Link href="#services" className="hover:text-primary transition-colors">Accounting & Bookkeeping</Link></li>
-              <li><Link href="#services" className="hover:text-primary transition-colors">Compliance & Risk</Link></li>
+              <li><Link href="/#services" className="hover:text-primary transition-colors">Business Strategy</Link></li>
+              <li><Link href="/#services" className="hover:text-primary transition-colors">Operational Improvement</Link></li>
+              <li><Link href="/#services" className="hover:text-primary transition-colors">Corporate Structuring</Link></li>
+              <li><Link href="/#services" className="hover:text-primary transition-colors">Financial Advisory</Link></li>
+              <li><Link href="/services/accounting-bookkeeping" className="hover:text-primary transition-colors">Accounting & Bookkeeping</Link></li>
+              <li><Link href="/#services" className="hover:text-primary transition-colors">Compliance & Risk</Link></li>
             </ul>
           </div>
 

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import SectionHeading from "@/components/ui/SectionHeading";
 import {
   Target,
@@ -23,6 +24,18 @@ interface ServiceItem {
 }
 
 const services: ServiceItem[] = [
+  {
+    title: "Accounting & Bookkeeping",
+    description: "Flawless financial record-keeping, VAT registration and compliance, regular financial reporting, and payroll management to keep your business fully compliant with UAE regulations.",
+    icon: <Calculator size={32} />,
+    img: "https://images.pexels.com/photos/6863177/pexels-photo-6863177.jpeg?auto=compress&cs=tinysrgb&w=600",
+    details: [
+      "Daily Bookkeeping & General Ledger: Maintaining up-to-date and accurate transaction records using cloud accounting software.",
+      "VAT Registration & Compliance: Handling UAE VAT registration, preparing and filing VAT returns, and advising on tax planning.",
+      "Financial Reporting: Generating monthly/quarterly Balance Sheets, Income Statements, and Cash Flow Statements.",
+      "Payroll & WPS Management: Setting up and running payroll systems compliant with the UAE Wages Protection System (WPS)."
+    ]
+  },
   {
     title: "Business Strategy",
     description: "Growth planning, market entry, business model review, and expansion strategy. CAMEO assists companies in improving their sales performance through clearly defined business strategies, operational enhancement, and the implementation of proven and successful business models tailored to their industry and growth objectives.",
@@ -72,18 +85,6 @@ const services: ServiceItem[] = [
     ]
   },
   {
-    title: "Accounting & Bookkeeping",
-    description: "Flawless financial record-keeping, VAT registration and compliance, regular financial reporting, and payroll management to keep your business fully compliant with UAE regulations.",
-    icon: <Calculator size={32} />,
-    img: "https://images.pexels.com/photos/6863177/pexels-photo-6863177.jpeg?auto=compress&cs=tinysrgb&w=600",
-    details: [
-      "Daily Bookkeeping & General Ledger: Maintaining up-to-date and accurate transaction records using cloud accounting software.",
-      "VAT Registration & Compliance: Handling UAE VAT registration, preparing and filing VAT returns, and advising on tax planning.",
-      "Financial Reporting: Generating monthly/quarterly Balance Sheets, Income Statements, and Cash Flow Statements.",
-      "Payroll & WPS Management: Setting up and running payroll systems compliant with the UAE Wages Protection System (WPS)."
-    ]
-  },
-  {
     title: "Compliance & Risk Advisory",
     description: "Regulatory guidance, documentation support, and risk management frameworks for UAE businesses.",
     icon: <ShieldCheck size={32} />,
@@ -126,46 +127,93 @@ const Services = () => {
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -8 }}
-              onClick={() => setSelectedService(service)}
-              className="group cursor-pointer rounded-[32px] bg-white border border-gray-100 shadow-sm hover:shadow-2xl hover:shadow-primary/8 transition-all duration-300 overflow-hidden"
-            >
-              {/* Card Image */}
-              <div className="relative h-48 overflow-hidden">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={service.img}
-                  alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/30 to-transparent" />
-                <div className="absolute bottom-4 left-4 text-white">
-                  {service.icon}
-                </div>
-              </div>
+          {services.map((service, index) => {
+            const isAccounting = service.title === "Accounting & Bookkeeping";
 
-              {/* Card Content */}
-              <div className="p-8 relative overflow-hidden">
-                <div className="absolute -bottom-8 -right-8 w-28 h-28 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors" />
-                <h3 className="text-xl font-bold text-navy mb-3 group-hover:text-primary transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-text-main/60 leading-relaxed text-sm line-clamp-3">
-                  {service.description}
-                </p>
-                <div className="mt-6 flex items-center gap-2 text-primary font-bold text-sm opacity-0 group-hover:opacity-100 transition-all translate-x-[-8px] group-hover:translate-x-0">
-                  Learn More <span>→</span>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ y: -8 }}
+                className="group cursor-pointer rounded-[32px] bg-white border border-gray-100 shadow-sm hover:shadow-2xl hover:shadow-primary/8 transition-all duration-300 overflow-hidden flex flex-col justify-between h-full"
+              >
+                {isAccounting ? (
+                  <Link href="/services/accounting-bookkeeping" className="flex flex-col h-full justify-between">
+                    <div>
+                      {/* Card Image */}
+                      <div className="relative h-48 overflow-hidden shrink-0">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={service.img}
+                          alt={service.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/30 to-transparent" />
+                        <div className="absolute bottom-4 left-4 text-white">
+                          {service.icon}
+                        </div>
+                      </div>
+
+                      {/* Card Content */}
+                      <div className="p-8 relative overflow-hidden flex-1">
+                        <div className="absolute -bottom-8 -right-8 w-28 h-28 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors" />
+                        <h3 className="text-xl font-bold text-navy mb-3 group-hover:text-primary transition-colors">
+                          {service.title}
+                        </h3>
+                        <p className="text-text-main/60 leading-relaxed text-sm line-clamp-3">
+                          {service.description}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="px-8 pb-8">
+                      <div className="flex items-center gap-2 text-primary font-bold text-sm translate-x-0 group-hover:translate-x-1 transition-transform">
+                        Explore Service Page <span>→</span>
+                      </div>
+                    </div>
+                  </Link>
+                ) : (
+                  <div onClick={() => setSelectedService(service)} className="flex flex-col h-full justify-between">
+                    <div>
+                      {/* Card Image */}
+                      <div className="relative h-48 overflow-hidden shrink-0">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={service.img}
+                          alt={service.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/30 to-transparent" />
+                        <div className="absolute bottom-4 left-4 text-white">
+                          {service.icon}
+                        </div>
+                      </div>
+
+                      {/* Card Content */}
+                      <div className="p-8 relative overflow-hidden flex-1">
+                        <div className="absolute -bottom-8 -right-8 w-28 h-28 bg-primary/5 rounded-full blur-2xl group-hover:bg-primary/10 transition-colors" />
+                        <h3 className="text-xl font-bold text-navy mb-3 group-hover:text-primary transition-colors">
+                          {service.title}
+                        </h3>
+                        <p className="text-text-main/60 leading-relaxed text-sm line-clamp-3">
+                          {service.description}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="px-8 pb-8">
+                      <div className="flex items-center gap-2 text-primary font-bold text-sm opacity-0 group-hover:opacity-100 transition-all translate-x-[-8px] group-hover:translate-x-0">
+                        Learn More <span>→</span>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </motion.div>
+            );
+          })}
 
           {/* Spacer card — CTA */}
           <motion.div
@@ -182,12 +230,12 @@ const Services = () => {
             <p className="text-white/60 text-sm leading-relaxed mb-8">
               Every business is unique. Let us craft a tailored advisory package for your specific challenges.
             </p>
-            <a
-              href="#contact"
+            <Link
+              href="/#contact"
               className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-white font-bold rounded-xl hover:bg-accent/90 transition-all"
             >
               Talk to Us
-            </a>
+            </Link>
           </motion.div>
         </div>
       </div>

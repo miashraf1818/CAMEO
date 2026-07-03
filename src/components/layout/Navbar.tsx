@@ -9,11 +9,11 @@ import { cn } from "@/lib/utils";
 import Button from "@/components/ui/Button";
 
 const navLinks = [
-  { name: "Home", href: "#" },
-  { name: "Services", href: "#services" },
-  { name: "Industries", href: "#industries" },
-  { name: "About", href: "#about" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "Services", href: "/#services" },
+  { name: "Industries", href: "/#industries" },
+  { name: "About", href: "/#about" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 const Navbar = () => {
@@ -66,11 +66,11 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <a href="#contact">
+          <Link href="/#contact">
             <Button variant="orange" size="sm" className="ml-4">
               Book a Consultation
             </Button>
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -106,11 +106,11 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <a href="#contact" className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link href="/#contact" className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
                 <Button variant="orange" size="md" className="w-full mt-2">
                   Book a Consultation
                 </Button>
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}
