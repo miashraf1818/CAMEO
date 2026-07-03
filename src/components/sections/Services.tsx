@@ -28,7 +28,7 @@ const services: ServiceItem[] = [
     title: "Accounting & Bookkeeping",
     description: "Flawless financial record-keeping, VAT registration and compliance, regular financial reporting, and payroll management to keep your business fully compliant with UAE regulations.",
     icon: <Calculator size={32} />,
-    img: "https://images.pexels.com/photos/6863177/pexels-photo-6863177.jpeg?auto=compress&cs=tinysrgb&w=600",
+    img: "/real-calculator-desk.png",
     details: [
       "Daily Bookkeeping & General Ledger: Maintaining up-to-date and accurate transaction records using cloud accounting software.",
       "VAT Registration & Compliance: Handling UAE VAT registration, preparing and filing VAT returns, and advising on tax planning.",

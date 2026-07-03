@@ -108,7 +108,7 @@ export default function AccountingBookkeepingPage() {
           <div className="absolute inset-0 opacity-40 mix-blend-luminosity">
             <div
               className="w-full h-full bg-cover bg-center"
-              style={{ backgroundImage: "url('https://images.pexels.com/photos/6863177/pexels-photo-6863177.jpeg?auto=compress&cs=tinysrgb&w=1600')" }}
+              style={{ backgroundImage: "url('/real-calculator-desk.png')" }}
             />
           </div>
           <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-transparent" />
@@ -195,7 +195,7 @@ export default function AccountingBookkeepingPage() {
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl z-10">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="https://images.pexels.com/photos/5849559/pexels-photo-5849559.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    src="/real-calculator-desk.png"
                     alt="Financial Documents Review"
                     className="w-full h-full object-cover"
                   />

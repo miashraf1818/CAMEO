@@ -29,6 +29,7 @@ The website is built with a modern, high-performance web development stack:
 
 | Date | Commit / Reference | Task / Description | Status / Deployment |
 | :--- | :--- | :--- | :--- |
+| **2026-07-03** | `362c320` | Replaced stock placeholder photos on Accounting & Bookkeeping service card and subpage with a high-quality generated image of a real calculator with worksheets | Pushed to GitHub |
 | **2026-07-03** | `2fa1152` | Moved 'Accounting & Bookkeeping' service to the 1st position in core services, created its dedicated subpage `/services/accounting-bookkeeping` with an enquiry form, and updated all global links for subpage support | Pushed to GitHub |
 | **2026-07-02** | `3538391` | Implemented Next.js Serverless API Route (`/api/contact`) with Resend auto-reply & admin alerts mapped to verified domain `cameoconsultancy.services`, updated contact emails, resolved React form reset bug, and added logo/signature templates | Pushed to GitHub |
 | **2026-05-15** | `c89b3ab` | Fixed JSX parsing error (closing tag mismatch) | Pushed to GitHub & Deployed |
